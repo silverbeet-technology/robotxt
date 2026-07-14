@@ -1,0 +1,4 @@
+##### base
+User-agent: *
+Content-Signal: search=yes,ai-train=no
+Allow: /
