@@ -8,7 +8,7 @@ site_fqdn = input("Enter your FQDN: ")
 
 
 with open(file_name, "w") as file:
-    file.write("##### robots.txt \n\n")
+    file.write("#### robots.txt \n\n")
 
 with open(file_name, 'a') as fout, fileinput.input('src/ua-block-train-block-search.txt') as fin:
     for line in fin:
