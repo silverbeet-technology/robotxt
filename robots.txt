@@ -52,9 +52,9 @@ User-agent: cohere-ai
 Disallow: /
 
 #### Sitemap
-Sitemap: https://yaho.com/sitemap.xml
+Sitemap: https://asdfjdsalf.net/sitemap.xml
 
-#### Site disclaimer
+#### Disclaimer
 # As a condition of accessing this website, you agree to abide by the following
 # content signals:
 #
@@ -93,4 +93,4 @@ Sitemap: https://yaho.com/sitemap.xml
 #    - Option 3: Block all AI crawlers
 #     (https://thegeocommunity.com/blogs/generative-engine-optimization/robots-txt-ai-bots/#option-3-block-all-ai-crawlers)
 # * Generated via the https://github.com/silverbeet-technology/ai-blocking-robots.txt project
-# * File robots.txt created on 2026-07-14 11:40:08.845353 
+# * File robots.txt created on 2026-07-14 18:40:48.099749 

@@ -1,3 +1,0 @@
-##### base
-User-agent: *
-Allow: /

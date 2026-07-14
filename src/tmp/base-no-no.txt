@@ -1,4 +1,0 @@
-##### base
-User-agent: *
-Content-Signal: search=no,ai-train=no
-Allow: /

@@ -11,6 +11,15 @@ This project includes a Python script that generates a modern robots.txt file th
 * Checkout code
 * Run the script
 * Answer questions
+  - Option 1: Allow all AI crawlers (maximum visibility)
+    This is the simplest approach. Every bot gets full access. If your goal is Generative Engine Optimization (GEO) visibility and you want to be cited everywhere, this is the starting point.
+  
+  - Option 2: Allow search-linked crawlers, block training-only crawlers
+    This blocks bots that primarily collect training data while keeping your content accessible to bots that power real-time AI search and answers.
+    Note: The line between "training" and "retrieval" is blurring. GPTBot is used for both training and retrieval. Blocking GPTBot while allowing OAI-SearchBot is OpenAI's recommended split if you want to opt out of training but stay in ChatGPT search results.
+  
+  - Option 3: Block all AI crawlers
+    This blocks AI bots while keeping traditional search crawlers (Googlebot, Bingbot) allowed under the wildcard rule.
 * Review output of new `robots.txt`
 * Use the new `robots.txt` file in your environment
 

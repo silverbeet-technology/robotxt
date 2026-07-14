@@ -1,44 +1,72 @@
+#!/usr/bin/env python3
+
 import os
 import datetime
 import fileinput
 
 file_name = "robots.txt"
 
-site_fqdn = input("Enter your FQDN: ")
+#### build hash
+build = os.popen('git rev-parse --short HEAD').read()
 
+#### title (figlet -m 1 "ai-robots-block")
+print(rf"""
+       _                _           _           _          _   
+  __ _(_)    _ __  ___ | |__   ___ | |_  ___   | |_ __  __| |_ 
+ / _` | |   | '__|/ _ \| '_ \ / _ \| __|/ __|  | __|\ \/ /| __|
+| (_| | | _ | |  | (_) | |_) | (_) | |_ \__ \ _| |_  >  < | |_ 
+ \__,_|_|(_)|_|   \___/|_.__/ \___/ \__||___/(_)\__|/_/\_\ \__|
 
-with open(file_name, "w") as file:
-    file.write("#### robots.txt \n\n")
+                                                  build {build}""")
 
-with open(file_name, 'a') as fout, fileinput.input('src/ua-block-train-block-search.txt') as fin:
+#### questions
+sites_dom = input("[?] Enter your site's domain (mysite.com): ")
+searh_yrn = input("[?] Allow AI search bots to index your site? (y/n): ") 
+train_yrn = input("[?] Allow AI training bots to access your site? (y/n): ") 
+print('\n' + '[*] Results: ')
+print(' - Domain: ' + sites_dom)
+print(' - Search: ' + searh_yrn)
+print(' - Train:  ' + train_yrn)
+#### create empty file
+print('[-] Creating: ' + file_name)
+with open(file_name, 'w') as file:
+    file.write('#### robots.txt \n\n')
+
+#### user-agent rules
+print('[-] Writing: user-agent rules')
+with open(file_name, 'a') as fout, fileinput.input('src/ua-block-search-block-train.txt') as fin:
     for line in fin:
         fout.write(line)
+    fout.write('\n')
 
-##### sitemap
-with open(file_name) as inputfile, open(file_name, 'a') as outputfile:
-        outputfile.write('\n')
+#### sitemap
+print('[-] Writing: sitemap section')
 with open(file_name, 'a') as fout, fileinput.input('src/sitemap.txt') as fin:
     for line in fin:
         fout.write(line)
 with open(file_name, "a") as file:
-    file.write("Sitemap: https://" + site_fqdn + "/sitemap.xml\n\n")
+    file.write("Sitemap: https://" + sites_dom + "/sitemap.xml\n\n")
 
-##### site-disclaimer 
-with open(file_name, 'a') as fout, fileinput.input('src/site-disclaimer.txt') as fin:
+#### disclaimer 
+print('[-] Writing: disclaimer section')
+with open(file_name, 'a') as fout, fileinput.input('src/disclaimer.txt') as fin:
     for line in fin:
         fout.write(line)
 
-##### about
+#### about
+print('[-] Writing: about section')
 with open(file_name) as inputfile, open(file_name, 'a') as outputfile:
         outputfile.write('\n')
 with open(file_name, 'a') as fout, fileinput.input('src/about.txt') as fin:
     for line in fin:
         fout.write(line)
 
-##### timestamp
-with open(file_name, "a") as file:
+#### timestamp
+print('[-] Writing: timestamp to ' + file_name)
+with open(file_name, 'a') as file:
     file.write(f"# * File {file_name} created on {datetime.datetime.now()} \n")
 
-##### summary
+#### summary
 if os.path.exists(file_name):
-    print(f"{file_name} has been created successfully, see file for usage. \n")
+    print('[*] Created: ' + file_name + ' see file for details and usage')
+                                                               
