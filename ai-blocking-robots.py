@@ -37,7 +37,7 @@ with open(file_name, 'a') as fout, fileinput.input('src/about.txt') as fin:
 
 ##### timestamp
 with open(file_name, "a") as file:
-    file.write(f"# {file_name} created {datetime.datetime.now()} \n")
+    file.write(f"# * File {file_name} created on {datetime.datetime.now()} \n")
 
 ##### summary
 if os.path.exists(file_name):
