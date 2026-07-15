@@ -41,3 +41,4 @@ More projects I've found that are actively addressing the AI blocking issue
 - [ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt)
   * including a huge list of all known AI bots to block: [robots.txt](https://raw.githubusercontent.com/ai-robots-txt/ai.robots.txt/refs/heads/main/robots.txt)
 - [Known Agents](https://knownagents.com/)
+- [Generate Robotstxt](https://generaterobotstxt.com/) -  Generate your robots.txt 
