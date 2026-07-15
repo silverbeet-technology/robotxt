@@ -1,5 +1,9 @@
 # ai-blocking-robots.txt
 
+<div align="center">
+<img src="img/robotxt-logo.png" alt="robotxt logo">
+</div>
+
 This project includes a Python script that generates a modern robots.txt file that'll help you block AI training bots, while (optionally) allowing AI crawling bots to index your website or content.
 
 ## Usage
