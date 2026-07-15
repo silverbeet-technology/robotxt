@@ -1,7 +1,7 @@
 # robotxt
 
 <div align="center">
-  <img src="img/robotxt-logo.png" alt="robotxt logo" width="250"/>
+  <img src="img/robotxt-logo.png" alt="robotxt logo" width="200"/>
 </div>
 
 This project includes a Python script that generates a modern robots.txt file that'll help you block AI training bots, while (optionally) allowing AI crawling bots to index your website or content.
@@ -29,15 +29,12 @@ This project includes a Python script that generates a modern robots.txt file th
 
 ## Questions
 
-- What is a robots.txt file?
-- Why would I want to use a robots.txt file on my site?
-- How do I use a robots.txt file off my site?
-- How do I add the generated robots.txt file to my website?
-- How do I add my Sitemap to the robots.txt file?
+- What is a robots.txt file, why would I want to use one on my site, and how do I use it? I would be repeating myself, so instead I'll link to the [moz.com robots.txt post](https://moz.com/learn/seo/robotstxt)
 
 ## Eratta
 
-* Robot logo Designed by [Magnific](https://www.magnific.com/) (src: [icon/robot_3685318](https://www.magnific.com/icon/robot_3685318)
+* Robot logo Designed by [Magnific](https://www.magnific.com/) (src: [icon/robot_3685318](https://www.magnific.com/icon/robot_3685318))
+  
 ## More
 
 More options that are actively addressing this issue
