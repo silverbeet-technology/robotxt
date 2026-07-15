@@ -24,11 +24,11 @@ print(rf"""
 sites_dom = input("[?] Enter your site's domain (mysite.com): ")
 searc_yrn = input("[?] Allow AI search bots to index your site? (Y/N): ") 
 train_yrn = input("[?] Allow AI training bots to access your site? (y/n): ") 
-
 print('\n' + '[*] Results: ')
 print('     - Domain: ' + sites_dom)
 print('     - Search: ' + searc_yrn)
 print('     - Train:  ' + train_yrn)
+
 #### create empty file
 print('[-] Creating: ' + file_name)
 with open(file_name, 'w') as file:
