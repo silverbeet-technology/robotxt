@@ -35,6 +35,9 @@ This project includes a Python script that generates a modern robots.txt file th
 - How do I add the generated robots.txt file to my website?
 - How do I add my Sitemap to the robots.txt file?
 
+## Eratta
+
+* Robot logo Designed by [Magnific](https://www.magnific.com/) (src: [icon/robot_3685318](https://www.magnific.com/icon/robot_3685318)
 ## More
 
 More options that are actively addressing this issue
