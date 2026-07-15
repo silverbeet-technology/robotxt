@@ -9,24 +9,35 @@ file_name = "robots.txt"
 #### build hash
 build = os.popen('git rev-parse --short HEAD').read()
 
-#### title (figlet -m 1 "ai-robots-block")
-print(rf"""
-       _                _           _           _          _   
-  __ _(_)    _ __  ___ | |__   ___ | |_  ___   | |_ __  __| |_ 
- / _` | |   | '__|/ _ \| '_ \ / _ \| __|/ __|  | __|\ \/ /| __|
-| (_| | | _ | |  | (_) | |_) | (_) | |_ \__ \ _| |_  >  < | |_ 
- \__,_|_|(_)|_|   \___/|_.__/ \___/ \__||___/(_)\__|/_/\_\ \__|
 
-                                                  build {build}""")
+#### title (figlet -m 1 -f slant "ai.robots.blk")
+print(rf"""
+               __          __        __ 
+   _________  / /_  ____  / /_ _  __/ /_
+  / ___/ __ \/ __ \/ __ \/ __/| |/_/ __/
+ / /  / /_/ / /_/ / /_/ / /_ _>  </ /_  
+/_/   \____/_.___/\____/\__//_/|_|\__/  
+
+ ------------------------- build {build}""")
+
+answer = input('Please indicate approval: [y/n]')
+if not answer or answer[0].lower() != 'y':
+    print('You did not indicate approval')
+    exit(1)
 
 #### questions
 sites_dom = input("[?] Enter your site's domain (mysite.com): ")
-searh_yrn = input("[?] Allow AI search bots to index your site? (y/n): ") 
+
+while search_yrn.upper() != "Y" and search_yrn.upper() != "N":
+  print('Enter Y or N')
+  search_yrn = input("[?] Allow AI search bots to index your site? (Y/N): ") 
+
 train_yrn = input("[?] Allow AI training bots to access your site? (y/n): ") 
+
 print('\n' + '[*] Results: ')
-print(' - Domain: ' + sites_dom)
-print(' - Search: ' + searh_yrn)
-print(' - Train:  ' + train_yrn)
+print('     - Domain: ' + sites_dom)
+print('     - Search: ' + searh_yrn)
+print('     - Train:  ' + train_yrn)
 #### create empty file
 print('[-] Creating: ' + file_name)
 with open(file_name, 'w') as file:
