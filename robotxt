@@ -20,23 +20,14 @@ print(rf"""
 
  ------------------------- build {build}""")
 
-answer = input('Please indicate approval: [y/n]')
-if not answer or answer[0].lower() != 'y':
-    print('You did not indicate approval')
-    exit(1)
-
 #### questions
 sites_dom = input("[?] Enter your site's domain (mysite.com): ")
-
-while search_yrn.upper() != "Y" and search_yrn.upper() != "N":
-  print('Enter Y or N')
-  search_yrn = input("[?] Allow AI search bots to index your site? (Y/N): ") 
-
+searc_yrn = input("[?] Allow AI search bots to index your site? (Y/N): ") 
 train_yrn = input("[?] Allow AI training bots to access your site? (y/n): ") 
 
 print('\n' + '[*] Results: ')
 print('     - Domain: ' + sites_dom)
-print('     - Search: ' + searh_yrn)
+print('     - Search: ' + searc_yrn)
 print('     - Train:  ' + train_yrn)
 #### create empty file
 print('[-] Creating: ' + file_name)

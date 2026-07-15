@@ -30,7 +30,7 @@ This project includes a Python script that generates a modern robots.txt file th
 - Why would I want to use one on my site?
 - How do I use it?
 
-A good resource to review on this topic is this [moz.com robots.txt post](https://moz.com/learn/seo/robotstxt)
+A good resource to review on these questions is this [moz.com robots.txt post](https://moz.com/learn/seo/robotstxt)
 
 ## Eratta
 
