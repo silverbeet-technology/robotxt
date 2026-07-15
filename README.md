@@ -1,4 +1,4 @@
-# ai-blocking-robots.txt
+# robotxt
 
 <div align="center">
 <img src="img/robotxt-logo.png" alt="robotxt logo">
