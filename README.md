@@ -8,10 +8,7 @@ This project includes a Python script that generates a modern robots.txt file th
 
 ## Usage
 
-* Install Python, if needed 
-  - [macOS](https://docs.python.org/3/using/mac.html)
-  - [Windows](https://docs.python.org/3/using/windows.html)
-  - [Linux/Unix](https://docs.python.org/3/using/unix.html)
+* Install Python, if needed (howto: [macOS](https://docs.python.org/3/using/mac.html), [Windows](https://docs.python.org/3/using/windows.html), [Linux/Unix](https://docs.python.org/3/using/unix.html))
 * Checkout code
 * Run the script
 * Answer questions
@@ -29,15 +26,17 @@ This project includes a Python script that generates a modern robots.txt file th
 
 ## Questions
 
-- What is a robots.txt file, why would I want to use one on my site, and how do I use it? I would be repeating myself, so instead I'll link to the [moz.com robots.txt post](https://moz.com/learn/seo/robotstxt)
+- What is a robots.txt file?
+- Why would I want to use one on my site?
+- How do I use it?
+
+A good resource to review on this topic is this [moz.com robots.txt post](https://moz.com/learn/seo/robotstxt)
 
 ## Eratta
 
 * Robot logo Designed by [Magnific](https://www.magnific.com/) (src: [icon/robot_3685318](https://www.magnific.com/icon/robot_3685318))
   
-## More
-
-More options that are actively addressing this issue
+More projects I've found that are actively addressing the AI blocking issue
 
 - [ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt)
   * including a huge list of all known AI bots to block: [robots.txt](https://raw.githubusercontent.com/ai-robots-txt/ai.robots.txt/refs/heads/main/robots.txt)
