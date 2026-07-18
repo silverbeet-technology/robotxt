@@ -17,13 +17,6 @@ cd robotxt
 * Run the script
 ```bash 
 python3 robotxt
-               __          __        __
-   _________  / /_  ____  / /_ _  __/ /_
-  / ___/ __ \/ __ \/ __ \/ __/| |/_/ __/
- / /  / /_/ / /_/ / /_/ / /_ _>  </ /_
-/_/   \____/_.___/\____/\__//_/|_|\__/
-
- ------------------------- build 38ba13f
 ```
 * Answer the questions regarding the level of AI bot blocking you want implemented:
 
