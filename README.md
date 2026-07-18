@@ -34,13 +34,14 @@ python3 robotxt
     This blocks AI bots for training, and website indexing using a huge list of "all known" AI bots from the [ai-robots-txt/ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt) project
 
 * Review output of new `robots.txt`
-* Use the new `robots.txt` file in your environment [Where should I put my robots.txt file?](https://yoast.com/ultimate-guide-robots-txt/#where)
+* Use the new `robots.txt` file in your environment (howto: [Where should I put my robots.txt file?](https://yoast.com/ultimate-guide-robots-txt/#where))
 
 ## Questions
 
 - [What is robots.txt?](https://www.cloudflare.com/learning/bots/what-is-robots-txt/)
 - [How does a Robots.txt file work?](https://www.cloudflare.com/learning/bots/what-is-robots-txt/#how-does-a-robotstxt-file-work)
 - [How does robots.txt relate to bot management?](https://www.cloudflare.com/learning/bots/what-is-robots-txt/#how-does-robotstxt-relate-to-bot-management)
+- [What is love?](https://archive.org/download/haddaway-what-is-love_202201/Haddaway%20-%20What%20Is%20Love.mp3)
 
 ## Eratta
 
