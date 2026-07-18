@@ -9,25 +9,30 @@ This project includes a Python script that generates a modern robots.txt file th
 ## Usage
 
 * Install Python, if needed (howto: [macOS](https://docs.python.org/3/using/mac.html), [Windows](https://docs.python.org/3/using/windows.html), [Linux/Unix](https://docs.python.org/3/using/unix.html))
-* Checkout code
+* Checkout code, change into new directory
 ```bash
 git clone https://git.silverbeet.tech/phil/robotxt.git
+cd robotxt
 ```
 * Run the script
 ```bash 
-cd robotxt
 python3 robotxt
 ```
-* Answer the questions regarding the level of AI bot blocking you want implemented
+* Answer the questions regarding the level of AI bot blocking you want implemented:
+
   - __Option 1__: Allow all AI crawlers (maximum visibility)
   The simplest approach that lets every bot have full access to your content. If your goal is Generative Engine Optimization (GEO) visibility and you want to be cited everywhere, this is the starting point.
-  - Option 2: Allow search-linked crawlers, block training-only crawlers
+
+  - __Option 2__: Allow search-linked crawlers, block training-only crawlers
   This blocks bots that primarily collect training data while keeping your content accessible to bots that power real-time AI search and answers.
   > Note: The line between "training" and "retrieval" is blurring. GPTBot is used for both training and retrieval. Blocking GPTBot while allowing OAI-SearchBot is OpenAI's recommended split if you want to opt out of training but stay in ChatGPT search results
-  - Option 3: Block all AI crawlers
+
+  - __Option 3__: Block all AI crawlers
     This blocks AI bots for training, and website indexing
-  - Option 4: Block "all known" AI crawlers
+
+  - __Option 4__: Block "all known" AI crawlers
     This blocks AI bots for training, and website indexing using a huge list of "all known" AI bots from the [ai-robots-txt/ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt) project
+
 * Review output of new `robots.txt`
 * Use the new `robots.txt` file in your environment [Where should I put my robots.txt file?](https://yoast.com/ultimate-guide-robots-txt/#where)
 
