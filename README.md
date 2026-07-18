@@ -10,23 +10,15 @@ This project includes a Python script that generates a modern robots.txt file th
 
 * Install Python, if needed (howto: [macOS](https://docs.python.org/3/using/mac.html), [Windows](https://docs.python.org/3/using/windows.html), [Linux/Unix](https://docs.python.org/3/using/unix.html))
 * Checkout code
-```bash 
 ```bash
 git clone https://git.silverbeet.tech/phil/robotxt.git
-cd robotxt
-```
-```
-```
-```
 ```
 * Run the script
 ```bash 
-```bash 
+cd robotxt
 python3 robotxt
 ```
-```
-```
-* Answer the questions about the level of AI bot blocking you want to use
+* Answer the questions regarding the level of AI bot blocking you want implemented
   - Option 1: Allow all AI crawlers (maximum visibility)
   The simplest approach that lets every bot have full access to your content. If your goal is Generative Engine Optimization (GEO) visibility and you want to be cited everywhere, this is the starting point.
   - Option 2: Allow search-linked crawlers, block training-only crawlers
@@ -61,5 +53,7 @@ Other projects I've found that are actively addressing the AI blocking issue tha
 - [Known Agents](https://knownagents.com/) - see how AI agents are crawling your site and using your tools
 - [Generate Robotstxt](https://generaterobotstxt.com/) -  interactively generate a basic robots.txt file, which includes AI bot blocking options
 - [The /llms.txt file](https://llmstxt.org/) - a proposed standard to use a llms.txt file to provide information to help LLMs use a website at inference time, following the ideals of the original robots.txt standard
+- [Anubis](https://anubis.techaro.lol/) - an amazing open source project that, "<i>...uses a combination of heuristics to identify and block bots before they take your website down. You can customize the rules with your own policies.</i>", which gives you active and automated control over which bots can access your site and content
+  * NOTE: I'm reviewing the [Traefik configuration for Anubis](https://anubis.techaro.lol/docs/admin/environments/traefik) to use on some of my sites
 
-## Thanks
+### Thanks
