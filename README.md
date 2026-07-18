@@ -19,7 +19,7 @@ cd robotxt
 python3 robotxt
 ```
 * Answer the questions regarding the level of AI bot blocking you want implemented
-  - Option 1: Allow all AI crawlers (maximum visibility)
+  - __Option 1__: Allow all AI crawlers (maximum visibility)
   The simplest approach that lets every bot have full access to your content. If your goal is Generative Engine Optimization (GEO) visibility and you want to be cited everywhere, this is the starting point.
   - Option 2: Allow search-linked crawlers, block training-only crawlers
   This blocks bots that primarily collect training data while keeping your content accessible to bots that power real-time AI search and answers.
