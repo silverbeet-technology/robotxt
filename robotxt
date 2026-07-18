@@ -7,55 +7,92 @@ import fileinput
 file_name = "robots.txt"
 
 #### build hash
-build = os.popen('git rev-parse --short HEAD').read()
+build_hash = os.popen('git rev-parse --short HEAD').read()
 
+#### determine number of bots blocked
+opt_1_total = os.popen('cat src/ua-option-1.txt | grep "^User-agent:" | grep -v "*" | wc -l').read()
+opt_2_total = os.popen('cat src/ua-option-2.txt | grep "^User-agent:" | grep -v "*" | wc -l').read()
+opt_3_total = os.popen('cat src/ua-option-3.txt | grep "^User-agent:" | grep -v "*" | wc -l').read()
+opt_4_total = os.popen('cat src/ua-option-4.txt | grep "^User-agent:" | grep -v "*" | wc -l').read()
 
 #### title (figlet -m 1 -f slant "ai.robots.blk")
 print(rf"""
-               __          __        __ 
+               __          __        __
    _________  / /_  ____  / /_ _  __/ /_
   / ___/ __ \/ __ \/ __ \/ __/| |/_/ __/
- / /  / /_/ / /_/ / /_/ / /_ _>  </ /_  
-/_/   \____/_.___/\____/\__//_/|_|\__/  
+ / /  / /_/ / /_/ / /_/ / /_ _>  </ /_
+/_/   \____/_.___/\____/\__//_/|_|\__/
 
- ------------------------- build {build}""")
+ ------------------------- build {build_hash}""")
 
 #### questions
-sites_dom = input("[?] Enter your site's domain (mysite.com): ")
-searc_yrn = input("[?] Allow AI search bots to index your site? (Y/N): ") 
-train_yrn = input("[?] Allow AI training bots to access your site? (y/n): ") 
-print('\n' + '[*] Results: ')
-print('     - Domain: ' + sites_dom)
-print('     - Search: ' + searc_yrn)
-print('     - Train:  ' + train_yrn)
+site_domain = input("[?] Site domain with http (https://mysite.com): ")
+print('\n' + '[?] AI bot blocking level desired:')
+print('   (1) Allow AI search bots access, allow AI training bots.  Total bots blocked: ' + opt_1_total, end='')
+print('   (2) Allow AI search bots access, block AI training bots.  Total bots blocked: ' + opt_2_total, end='')
+print('   (3) Block AI search bots access, block AI training bots.  Total bots blocked: ' + opt_3_total, end='')
+print('   (4) Block AI search bots access, block AI training bots.  Total bots blocked: ' + opt_4_total, end='')
+print('       AGRESSIVE: list of all known types from the ai-robots-txt/ai.robots.txt proejct')
+block_level = input('[-] Enter value (1 - 4): ')
+
+#### questions: summary
+print('\n' + '[*] Summary file will be created with the following values:')
+print('   * Domain: ' + site_domain)
+if block_level == "1":
+    print('   * Option 1: Allow AI search bots access, allow AI training bots' + '\n')
+elif block_level == "2":
+    print('   * Option 2: Allow AI search bots access, block AI training bots' + '\n') 
+elif block_level == "3":
+    print('   * Option 3: Block AI search bots access, block AI training bots' + '\n') 
+elif block_level == "4":
+    print('   * Option 4: Block AI search bots access, block AI training bots (full, agressive list)' + '\n') 
 
 #### create empty file
 print('[-] Creating: ' + file_name)
 with open(file_name, 'w') as file:
     file.write('#### robots.txt \n\n')
 
-#### user-agent rules
-print('[-] Writing: user-agent rules')
-with open(file_name, 'a') as fout, fileinput.input('src/ua-block-search-block-train.txt') as fin:
-    for line in fin:
-        fout.write(line)
-    fout.write('\n')
+#### inject user-agent rules
+if block_level == "1":
+    print('[-] Writing: user-agent rules for block level 1')
+    with open(file_name, 'a') as fout, fileinput.input('src/ua-option-1.txt') as fin:
+        for line in fin:
+            fout.write(line)
+        fout.write('\n')
+elif block_level == "2":
+    print('[-] Writing: user-agent rules for block level 2')
+    with open(file_name, 'a') as fout, fileinput.input('src/ua-option-2.txt') as fin:
+        for line in fin:
+            fout.write(line)
+        fout.write('\n')
+elif block_level == "3":
+    print('[-] Writing: user-agent rules for block level 3')
+    with open(file_name, 'a') as fout, fileinput.input('src/ua-option-3.txt') as fin:
+        for line in fin:
+            fout.write(line)
+        fout.write('\n')
+elif block_level == "4":
+    print('[-] Writing: user-agent rules for block level 3')
+    with open(file_name, 'a') as fout, fileinput.input('src/ua-option-4.txt') as fin:
+        for line in fin:
+            fout.write(line)
+        fout.write('\n')
 
-#### sitemap
+#### inject sitemap
 print('[-] Writing: sitemap section')
 with open(file_name, 'a') as fout, fileinput.input('src/sitemap.txt') as fin:
     for line in fin:
         fout.write(line)
 with open(file_name, "a") as file:
-    file.write("Sitemap: https://" + sites_dom + "/sitemap.xml\n\n")
+    file.write("Sitemap: https://" + site_domain + "/sitemap.xml\n\n")
 
-#### disclaimer 
+#### inject disclaimer
 print('[-] Writing: disclaimer section')
 with open(file_name, 'a') as fout, fileinput.input('src/disclaimer.txt') as fin:
     for line in fin:
         fout.write(line)
 
-#### about
+#### inject about
 print('[-] Writing: about section')
 with open(file_name) as inputfile, open(file_name, 'a') as outputfile:
         outputfile.write('\n')
@@ -63,12 +100,11 @@ with open(file_name, 'a') as fout, fileinput.input('src/about.txt') as fin:
     for line in fin:
         fout.write(line)
 
-#### timestamp
+#### inject timestamp
 print('[-] Writing: timestamp to ' + file_name)
 with open(file_name, 'a') as file:
     file.write(f"# * File {file_name} created on {datetime.datetime.now()} \n")
 
 #### summary
 if os.path.exists(file_name):
-    print('[*] Created: ' + file_name + ' see file for details and usage')
-                                                               
+    print('\n' + '[*] Created: ' + file_name + ', reivew file for accuracy and details')
