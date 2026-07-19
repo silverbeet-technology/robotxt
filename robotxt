@@ -15,7 +15,7 @@ opt_2_total = os.popen('cat src/ua-option-2.txt | grep "^User-agent:" | grep -v 
 opt_3_total = os.popen('cat src/ua-option-3.txt | grep "^User-agent:" | grep -v "*" | wc -l').read()
 opt_4_total = os.popen('cat src/ua-option-4.txt | grep "^User-agent:" | grep -v "*" | wc -l').read()
 
-#### title (figlet -m 1 -f slant "ai.robots.blk")
+#### title (figlet -m 1 -f slant "robotxt")
 print(rf"""
                __          __        __
    _________  / /_  ____  / /_ _  __/ /_
